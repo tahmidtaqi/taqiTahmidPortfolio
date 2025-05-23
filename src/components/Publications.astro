@@ -1,0 +1,101 @@
+---
+---
+
+<section id="publications" class="section">
+  <div class="section-title">
+    <h2>Publications</h2>
+  </div>
+  
+  <div class="publications-container">
+    <div class="publication-card">
+      <h3 class="publication-title">
+        An Integrated Crowdsourcing Application for Embedded Smartphone Sensor Data Acquisition and Mobility Analysis
+      </h3>
+      <p class="publication-journal">
+        Published in the Journal of Advances in Information Technology, Vol.13(5): 503-511 (2022)
+      </p>
+      <p class="publication-abstract">
+        This research presents an integrated crowdsourcing application that leverages embedded smartphone 
+        sensors for data acquisition and mobility analysis. The application facilitates the collection of 
+        sensor data from smartphones and applies analytical methods to extract mobility patterns and insights.
+      </p>
+      <a href="http://www.jait.us/index.php?m=content&c=index&a=show&catid=221&id=1258&fbclid=IwAR1ebHxQ-6RXEAtvz8InZ-gw01TpnXbrfIqkGZDrdH85QS4rX0MlIrmZQJQ" target="_blank" rel="noopener noreferrer" class="publication-link">
+        View Publication
+      </a>
+    </div>
+    
+    <div class="publication-card">
+      <h3 class="publication-title">
+        A Novel Approach for Product Recommendation Using Smartphone Sensor Data
+      </h3>
+      <p class="publication-journal">
+        Published in the International Journal of Interactive Mobile Technologies (iJIM), volume 16, number 16 (2022)
+      </p>
+      <p class="publication-abstract">
+        This paper introduces a novel approach to product recommendation systems that incorporates 
+        smartphone sensor data to enhance personalization and context awareness. By utilizing sensor 
+        data such as location, movement patterns, and environmental conditions, the system can deliver 
+        more relevant and timely product recommendations to users.
+      </p>
+      <a href="https://online-journals.org/index.php/i-jim/article/view/31617?fbclid=IwAR053MXaqUfdJA1XKCZvq-71ZchIvcqqVJNXiCpS0eJyBvZ6utOIhYqst0w" target="_blank" rel="noopener noreferrer" class="publication-link">
+        View Publication
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .publications-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .publication-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+  }
+  
+  .publication-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  }
+  
+  .publication-title {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+  }
+  
+  .publication-journal {
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .publication-abstract {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .publication-link {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .publication-link:hover {
+    color: var(--text-primary);
+  }
+  
+  .publication-link::after {
+    content: " →";
+    transition: var(--transition);
+  }
+  
+  .publication-link:hover::after {
+    margin-left: 5px;
+  }
+</style>

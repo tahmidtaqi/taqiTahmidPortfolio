@@ -1,0 +1,114 @@
+---
+---
+
+<section id="education" class="section">
+  <div class="section-title">
+    <h2>Education</h2>
+  </div>
+  
+  <div class="education-container">
+    <div class="education-card">
+      <div class="education-header">
+        <h3>Ahsanullah University of Science and Technology</h3>
+        <span class="education-date">2017-2022</span>
+      </div>
+      <p class="education-degree">BSc. in Computer Science and Engineering</p>
+      <p class="education-gpa">CGPA: 3.34/4.00</p>
+      <div class="education-details">
+        <p>
+          During my time at AUST, I gained extensive knowledge in computer science fundamentals, 
+          programming paradigms, and software engineering principles. I participated in various 
+          technical projects and research activities that enhanced my skills and prepared me for 
+          the industry.
+        </p>
+      </div>
+    </div>
+    
+    <div class="education-card">
+      <div class="education-header">
+        <h3>Chittagong College</h3>
+        <span class="education-date">2014-2016</span>
+      </div>
+      <p class="education-degree">Higher Secondary School</p>
+      <p class="education-gpa">CGPA: 5.00</p>
+      <div class="education-details">
+        <p>
+          Completed my Higher Secondary Certificate (HSC) with a focus on science and mathematics, 
+          establishing a strong foundation for my future studies in computer science.
+        </p>
+      </div>
+    </div>
+    
+    <div class="education-card">
+      <div class="education-header">
+        <h3>Chittagong Collegiate School</h3>
+        <span class="education-date">2009-2014</span>
+      </div>
+      <p class="education-degree">Secondary School</p>
+      <p class="education-gpa">CGPA: 5.00</p>
+      <div class="education-details">
+        <p>
+          Completed my Secondary School Certificate (SSC) with excellence, developing critical 
+          thinking and analytical skills that would prove valuable in my academic journey.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .education-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .education-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+  }
+  
+  .education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  }
+  
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+  
+  .education-date {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+  }
+  
+  .education-degree {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .education-gpa {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .education-details {
+    color: var(--text-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .education-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

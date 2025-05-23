@@ -1,0 +1,90 @@
+---
+---
+
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1>Hi, I'm <span class="highlight">Kazi Taqi Tahmid</span></h1>
+    <h2>Software Engineer</h2>
+    <p class="hero-description">
+      I'm a passionate software engineer specializing in building exceptional digital experiences. 
+      Currently, I'm focused on developing accessible, human-centered products.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+     <!-- <a href="#projects" class="btn">View My Work</a> -->
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--spacing-xl);
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .highlight {
+    color: var(--accent-color);
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .hero-cta .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

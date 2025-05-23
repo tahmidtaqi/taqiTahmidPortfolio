@@ -1,0 +1,136 @@
+---
+---
+
+<section id="experience" class="section">
+  <div class="section-title">
+    <h2>Experience</h2>
+  </div>
+  
+  <div class="experience-container">
+    <div class="experience-card">
+      <div class="experience-header">
+        <h3>Software Engineer</h3>
+        <div class="experience-company">
+          <span>Aveling Sarl</span>
+          <span class="experience-date">February 2023 - Present</span>
+          <span class="experience-type">Remote</span>
+        </div>
+      </div>
+      <ul class="experience-duties">
+        <li>
+          Designing and implementing functionalities for healthcare software systems that showcase
+          real-time data from databases, presenting dynamic charts, and monitoring systems.
+        </li>
+        <li>
+          Leveraging JavaScript to create a seamless, responsive user interface.
+        </li>
+        <li>
+          Crafting features for healthcare web applications using Vue.js, TypeScript, and various
+          frontend libraries to enhance user experience.
+        </li>
+        <li>
+          Ensuring interfaces are intuitive and user-friendly, focusing on delivering visually
+          appealing healthcare solutions.
+        </li>
+      </ul>
+    </div>
+    
+    <div class="experience-card">
+      <div class="experience-header">
+        <h3>Junior Software Engineer</h3>
+        <div class="experience-company">
+          <span>Celloscope Ltd.</span>
+          <span class="experience-date">June 2022 - January 2023</span>
+          <span class="experience-type">Dhaka</span>
+        </div>
+      </div>
+      <ul class="experience-duties">
+        <li>Engineered modern applications with Java, PostgreSQL, and Redis.</li>
+        <li>Built REST APIs with Spring MVC and Spring WebFlux.</li>
+        <li>Developed APIs to generate PDF, CSV, and XLSX reports with Jasper reports.</li>
+        <li>Followed TDD and clean architecture principles to build sustainable and framework-independent APIs.</li>
+      </ul>
+    </div>
+    
+    <div class="experience-card">
+      <div class="experience-header">
+        <h3>Software Engineering Intern</h3>
+        <div class="experience-company">
+          <span>Celloscope Ltd.</span>
+          <span class="experience-date">February 2022 - May 2022</span>
+          <span class="experience-type">Dhaka</span>
+        </div>
+      </div>
+      <ul class="experience-duties">
+        <li>Assisted in developing and maintaining software applications.</li>
+        <li>Learned and applied industry best practices in software development.</li>
+        <li>Collaborated with team members on various software projects.</li>
+        <li>Gained hands-on experience with Java and related technologies.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .experience-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+  }
+  
+  .experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  }
+  
+  .experience-header {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .experience-company {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+  }
+  
+  .experience-date, .experience-type {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+  }
+  
+  .experience-duties {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .experience-duties li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+  }
+  
+  .experience-duties li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .experience-company {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+  }
+</style>

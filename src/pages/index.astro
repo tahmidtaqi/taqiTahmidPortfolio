@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Projects from '../components/Projects.astro';
+import Publications from '../components/Publications.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Kazi Taqi Tahmid | Software Engineer">
+  <Header />
+  <main>
+    <Hero />
+    <About />
+    <Experience />
+    <Education />
+   <!-- <Projects /> -->
+    <Publications />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    margin-top: 0; /* Removed top margin since we have side nav */
+  }
+</style>

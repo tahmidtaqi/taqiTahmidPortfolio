@@ -1,0 +1,82 @@
+---
+---
+
+<header class="header">
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="#about">ABOUT ME</a></li>
+      <li><a href="#experience">MY Experience</a></li>
+      <li><a href="#projects">MY PROJECT</a></li>
+      <li><a href="#clients">MY CLIENT</a></li>
+      <li><a href="#blog">MY BLOG</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    background-color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-list a {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    padding: 15px 0;
+  }
+
+  .nav-list a:hover {
+    color: var(--accent-color);
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: auto;
+      height: 60px;
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .nav-list {
+      flex-direction: row;
+      gap: var(--spacing-md);
+      padding: var(--spacing-sm);
+    }
+
+    .nav-list a {
+      writing-mode: horizontal-tb;
+      padding: 5px 10px;
+    }
+  }
+</style>

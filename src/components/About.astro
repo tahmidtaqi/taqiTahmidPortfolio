@@ -1,0 +1,172 @@
+---
+---
+
+<section id="about" class="section">
+  <div class="section-title">
+    <h2>About Me</h2>
+  </div>
+  
+  <div class="about-content">
+    <div class="about-text">
+      <p>
+        Hello! I'm Kazi Taqi Tahmid, a software engineer from Chittagong, Bangladesh with a passion for creating 
+        elegant solutions to complex problems.
+      </p>
+      
+      <p>
+        With experience in full-stack development, I enjoy building applications using modern technologies 
+        and frameworks. My journey in software engineering has led me to work with healthcare systems, 
+        develop REST APIs, and contribute to innovative research in smartphone sensor data.
+      </p>
+      
+      <p>
+        I'm particularly interested in creating intuitive user interfaces and robust backend systems that 
+        deliver exceptional user experiences. When I'm not coding, I enjoy staying updated with the latest 
+        technological advancements and contributing to open-source projects.
+      </p>
+      
+      <h3>Technical Skills</h3>
+      <div class="skills-container">
+        <div class="skills-category">
+          <h4>Languages & Frameworks</h4>
+          <ul class="skills-list">
+            <li>JavaScript/TypeScript</li>
+            <li>Vue.js</li>
+            <li>Java</li>
+            <li>Spring Boot</li>
+           <!-- <li>Spring WebFlux</li> -->
+          </ul>
+        </div>
+        
+        <div class="skills-category">
+          <h4>Database Technologies</h4>
+          <ul class="skills-list">
+            <li>PostgreSQL</li>
+            <!--<li>Redis</li> -->
+            <li>SQL</li>
+          </ul>
+        </div>
+        
+        <!--<div class="skills-category">
+          <h4>Tools & Methods</h4>
+          <ul class="skills-list">
+            <li>Git</li>
+            <li>TDD</li>
+            <li>Clean Architecture</li>
+            <li>RESTful APIs</li>
+            <li>Jasper Reports</li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+    
+    <div class="about-image">
+      <div class="image-wrapper">
+        <img src="src/assets/unnamed.jpg" alt="Kazi Taqi Tahmid" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .about-text p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+  }
+  
+  .about-image {
+    position: relative;
+    max-width: 300px;
+    justify-self: center;
+  }
+  
+  .image-wrapper {
+    position: relative;
+  }
+  
+  .image-wrapper::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-color);
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    z-index: -1;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+  
+  .image-wrapper:hover::after {
+    transform: translate(5px, 5px);
+  }
+  
+  .image-wrapper img {
+    border-radius: var(--border-radius);
+    max-width: 100%;
+    /*filter: grayscale(100%) contrast(1); */
+    transition: var(--transition);
+    /*mix-blend-mode: multiply;*/
+  }
+  
+  .image-wrapper:hover img {
+    filter: none;
+    mix-blend-mode: normal;
+  }
+  
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+  
+  .skills-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .skills-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-secondary);
+  }
+  
+  .skills-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+  }
+  
+  @media (max-width: 992px) {
+    .skills-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+      order: -1;
+      margin: 0 auto var(--spacing-lg);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .skills-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
