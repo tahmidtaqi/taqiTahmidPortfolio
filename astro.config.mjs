@@ -5,4 +5,5 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://tahmidtaqi.github.io', // or custom domain
   base: '/taqiTahmidPortfolio/',
+  outDir: './dist',
 });
