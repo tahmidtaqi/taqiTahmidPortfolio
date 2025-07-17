@@ -9,12 +9,12 @@
       </div>
       <nav class="nav">
         <ul class="nav-list">
-         <li><a href="#about">ABOUT ME</a></li>
-          <li><a href="#experience">EXPERIENCE</a></li>
-          <li><a href="#education">EDUCATION</a></li>
-          <li><a href="#publications">PUBLICATIONS</a></li>
-          <!--<li><a href="#projects">PROJECT</a></li> -->
-          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <!--<li><a href="#projects">Project</a></li> -->
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <button class="mobile-nav-toggle" aria-controls="nav-list" aria-expanded="false">
@@ -63,10 +63,11 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(10, 25, 47, 0.85);
+    background-color: rgba(10, 25, 47, 0.95);
     backdrop-filter: blur(10px);
-    transition: var(--transition);
-    padding: var(--spacing-sm) 0;
+    transition: all 0.25s ease;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
   }
 
   .header-content {
@@ -79,12 +80,13 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent-color);
+    text-decoration: none;
   }
 
   .nav-list {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
+    gap: 32px;
     margin: 0;
     padding: 0;
   }
@@ -92,12 +94,16 @@
   .nav-list a {
     color: var(--text-primary);
     font-size: 0.9rem;
-    padding: var(--spacing-xs);
+    padding: 8px 12px;
     position: relative;
+    text-decoration: none;
+    transition: color 0.25s ease;
+    border-radius: 4px;
   }
 
   .nav-list a:hover {
     color: var(--accent-color);
+    background-color: rgba(100, 255, 218, 0.1);
   }
 
   .mobile-nav-toggle {
@@ -105,7 +111,8 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: var(--spacing-xs);
+    padding: 8px;
+    z-index: 1001;
   }
 
   .hamburger {
@@ -121,7 +128,7 @@
     height: 2px;
     width: 100%;
     background-color: var(--accent-color);
-    transition: var(--transition);
+    transition: all 0.25s ease;
   }
 
   .sr-only {
@@ -137,12 +144,8 @@
   }
 
   @media (max-width: 768px) {
-    .nav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 999;
+    .mobile-nav-toggle {
+      display: block;
     }
 
     .nav-list {
@@ -150,26 +153,41 @@
       top: 0;
       right: 0;
       bottom: 0;
-      background-color: var(--card-background);
-      padding: 80px var(--spacing-lg) var(--spacing-lg);
+      background-color: var(--primary-color);
+      padding: 100px 32px 32px;
       width: 75%;
       max-width: 300px;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: flex-start;
+      gap: 24px;
       transform: translateX(100%);
-      transition: var(--transition);
+      transition: transform 0.25s ease;
       box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+      z-index: 999;
+      border-left: 1px solid rgba(100, 255, 218, 0.1);
     }
 
     .nav-list.active {
       transform: translateX(0);
     }
 
-    .mobile-nav-toggle {
+    .nav-list a {
+      color: var(--text-primary);
+      font-size: 1rem;
+      padding: 12px 16px;
+      width: 100%;
       display: block;
-      position: relative;
-      z-index: 1001;
+      opacity: 1;
+      background-color: transparent;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-list a:hover {
+      color: var(--accent-color);
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateX(8px);
     }
 
     .mobile-nav-toggle[aria-expanded="true"] .hamburger span:nth-child(1) {
@@ -186,6 +204,25 @@
 
     body.nav-open {
       overflow: hidden;
+    }
+
+    /* Add overlay when menu is open */
+    body.nav-open::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-list {
+      width: 85%;
+      padding: 80px 24px 24px;
     }
   }
 </style>
