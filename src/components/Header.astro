@@ -1,79 +1,191 @@
+---
+---
+
 <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li><a href="#about">ABOUT ME</a></li>
-      <li><a href="#experience">EXPERIENCE</a></li>
-      <li><a href="#education">EDUCATION</a></li>
-      <li><a href="#publications">PUBLICATIONS</a></li>
-      <!--<li><a href="#projects">PROJECT</a></li> -->
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a href="/">KT</a>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+         <li><a href="#about">ABOUT ME</a></li>
+          <li><a href="#experience">EXPERIENCE</a></li>
+          <li><a href="#education">EDUCATION</a></li>
+          <li><a href="#publications">PUBLICATIONS</a></li>
+          <!--<li><a href="#projects">PROJECT</a></li> -->
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-nav-toggle" aria-controls="nav-list" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </div>
 </header>
+
+<script>
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navList = document.querySelector('.nav-list');
+  const navLinks = document.querySelectorAll('.nav-list a');
+  
+  if (mobileNavToggle && navList) {
+    mobileNavToggle.addEventListener('click', () => {
+      const expanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+      mobileNavToggle.setAttribute('aria-expanded', (!expanded).toString());
+      navList.classList.toggle('active');
+      document.body.classList.toggle('nav-open');
+    });
+  }
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navList) {
+        navList.classList.remove('active');
+      }
+      if (mobileNavToggle) {
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+      }
+      document.body.classList.remove('nav-open');
+    });
+  });
+</script>
 
 <style>
   .header {
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
-    width: 150px; /* Slightly wider to accommodate horizontal text */
-    background-color: #1e1e1e;
-    display: flex;
-    align-items: center;
-    z-index: 10;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    padding: var(--spacing-sm) 0;
   }
 
-  .nav {
-    width: 100%;
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
   }
 
   .nav-list {
-    list-style: none;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Changed from center to left-align */
+    list-style: none;
     gap: var(--spacing-lg);
-    padding: 0 20px; /* Added horizontal padding */
     margin: 0;
+    padding: 0;
   }
 
   .nav-list a {
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: var(--transition);
-    /* Removed writing-mode and text-orientation */
-    padding: 8px 0; /* Adjusted padding */
-    display: block; /* Makes entire area clickable */
-    width: 100%; /* Full width for hover effect */
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    padding: var(--spacing-xs);
+    position: relative;
   }
 
   .nav-list a:hover {
     color: var(--accent-color);
   }
 
+  .mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
   @media (max-width: 768px) {
-    .header {
+    .nav {
+      position: fixed;
       top: 0;
-      left: 0;
       right: 0;
-      bottom: auto;
-      height: 60px;
-      width: 100%;
+      bottom: 0;
+      z-index: 999;
     }
 
     .nav-list {
-      flex-direction: row;
-      gap: var(--spacing-md);
-      padding: var(--spacing-sm);
-      justify-content: center; /* Center items in mobile */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--card-background);
+      padding: 80px var(--spacing-lg) var(--spacing-lg);
+      width: 75%;
+      max-width: 300px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transform: translateX(100%);
+      transition: var(--transition);
+      box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
     }
 
-    .nav-list a {
-      padding: 5px 10px;
-      /* No need for writing-mode change since we removed it */
+    .nav-list.active {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-toggle {
+      display: block;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] .hamburger span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] .hamburger span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    body.nav-open {
+      overflow: hidden;
     }
   }
 </style>
